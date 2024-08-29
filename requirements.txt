@@ -1,5 +1,5 @@
-Flask
-spacy
-numpy
-matplotlib
+Flask==2.1.1
+spacy==3.1.0
+numpy==1.21.0
+matplotlib==3.9.1
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.1.0/en_core_web_sm-3.1.0.tar.gz
