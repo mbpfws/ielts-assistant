@@ -1,13 +1,18 @@
-from flask import Flask, request, jsonify
 import spacy
+from flask import Flask, request, jsonify
 import matplotlib.pyplot as plt
 import io
 import base64
 
 app = Flask(__name__)
 
-# Load the spaCy model
-nlp = spacy.load("en_core_web_sm")
+# Ensure the spaCy model is downloaded
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    from spacy.cli import download
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 # Function to generate feedback based on band score
 def generate_band_feedback(band_score):
