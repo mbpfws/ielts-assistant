@@ -1,6 +1,7 @@
 import spacy
 from flask import Flask, request, jsonify
-import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 import io
 import base64
 
